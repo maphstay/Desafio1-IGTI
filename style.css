@@ -1,0 +1,29 @@
+body {
+    text-align: center;
+    background-color: rgb(202, 233, 230);
+}
+
+p {
+    text-align: center;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    margin: auto;
+}
+
+button {
+    border-radius: 10px;
+    outline: none;
+}
+
+button:hover {
+    background-color: grey;
+}
+
+select {
+    border-radius: 10px;
+    outline: none;
+}
