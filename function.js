@@ -10,7 +10,7 @@ xmlhttp.onreadystatechange = function() {
         let test = document.getElementById("tb");
         if (test !== null) {
                 document.getElementById("tb").remove();
-        }
+        };
         
         //CRIA CABEÇALHO DA TABELA
         for (let i = 0; i < 1; i++) {
@@ -29,7 +29,7 @@ xmlhttp.onreadystatechange = function() {
             document.getElementById("tb").appendChild(col0);
             document.getElementById("tb").appendChild(col1);
             document.getElementById("tb").appendChild(col2);
-        }
+        };
 
         //CRIA CORPO E INSERE CONTEÚDO Á TABELA
         for (let i = 0; i < lista.funcionarios.length; i++) {
@@ -45,8 +45,8 @@ xmlhttp.onreadystatechange = function() {
             document.getElementById("tb").appendChild(el1);
             document.getElementById("tb").appendChild(el2);
             document.getElementById("tb").appendChild(el3);
-        }
-    }       
+        };
+    };       
 };
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
@@ -64,7 +64,7 @@ function mSalario () {
             let test = document.getElementById("tb");
             if (test !== null) {
                 document.getElementById("tb").remove();
-            }
+            };
 
             //CRIA CABEÇALHO DA TABELA
             for (let i = 0; i < 1; i++) {
@@ -83,7 +83,7 @@ function mSalario () {
                 document.getElementById("tb").appendChild(col0);
                 document.getElementById("tb").appendChild(col1);
                 document.getElementById("tb").appendChild(col2);
-            }
+            };
 
                 //FORMULA DO MAIOR SALÁRIO
                 let sal = 0, maiorSal = 0, maiorNome = "", maiorSetor = "";
@@ -93,8 +93,8 @@ function mSalario () {
                     maiorSal = sal
                     maiorNome = lista.funcionarios[i].nome
                     maiorSetor = lista.funcionarios[i].setor
-                }
-            }
+                };
+            };
 
                 //CRIA CORPO E INSERE CONTEÚDO Á TABELA
                 var el0 = document.createElement("tr");
@@ -109,9 +109,9 @@ function mSalario () {
                 document.getElementById("tb").appendChild(el1);
                 document.getElementById("tb").appendChild(el2);
                 document.getElementById("tb").appendChild(el3);
-        }
+        };
             
-    }       
+    };       
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 };
@@ -128,7 +128,7 @@ function menorSalario () {
             let test = document.getElementById("tb");
             if (test !== null) {
                 document.getElementById("tb").remove();
-            }
+            };
 
             //CRIA CABEÇALHO DA TABELA
             for (let i = 0; i < 1; i++) {
@@ -147,7 +147,7 @@ function menorSalario () {
                 document.getElementById("tb").appendChild(col0);
                 document.getElementById("tb").appendChild(col1);
                 document.getElementById("tb").appendChild(col2);
-            }
+            };
 
                 //FORMULA DO MENOR SALÁRIO
                 let sal = 0, menorSal = 99999, menorNome = "", menorSetor = "";
@@ -157,8 +157,8 @@ function menorSalario () {
                     menorSal = sal
                     menorNome = lista.funcionarios[i].nome
                     menorSetor = lista.funcionarios[i].setor
-                }
-            }
+                };
+            };
 
                 //CRIA CORPO E INSERE CONTEÚDO Á TABELA
                 var el0 = document.createElement("tr");
@@ -173,9 +173,9 @@ function menorSalario () {
                 document.getElementById("tb").appendChild(el1);
                 document.getElementById("tb").appendChild(el2);
                 document.getElementById("tb").appendChild(el3);
-        }
+        };
             
-    }       
+    };       
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 };
@@ -192,23 +192,23 @@ function media () {
             let test = document.getElementById("tb");
             if (test !== null) {
                 document.getElementById("tb").remove();
-            }
+            };
 
                 //FORMULA DA MÉDIA SALARIAL
                 let sal = 0, media = 0, qtd = lista.funcionarios.length;
             for (let i = 0; i < qtd; i++) {
                 sal += lista.funcionarios[i].salario
                 media = sal/qtd
-            }     
+            };     
             
                 //INSERE O RESULTADO A TELA
                 var el0 = document.createElement("h2");
                 el0.id = "tb"
                 el0.innerHTML = `A média salarial é de: </br>R$${media.toFixed(2)}`;
                 document.getElementById("ptb").appendChild(el0);        
-        }
+        };
         
-    }   
+    };   
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 };
@@ -225,7 +225,7 @@ function salSetor () {
             let test = document.getElementById("tb");
             if (test !== null) {
                 document.getElementById("tb").remove();
-            }
+            };
      
                 //CRIA OS ELEMENTOS INCLUINDO O SELECT E SUAS OPÇÕES
                 var el0 = document.createElement("a");
@@ -256,9 +256,9 @@ function salSetor () {
                 document.getElementById("sc").appendChild(el23);
                 document.getElementById("tb").appendChild(el3);
                 document.getElementById("tb").appendChild(el4);
-        }
+        };
         
-    }   
+    };   
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 };
@@ -275,7 +275,7 @@ function calc () {
             let test = document.getElementById("h3");
             if (test !== null) {
                 document.getElementById("h3").remove();
-            }
+            };
             let setor = document.getElementById("sc").value;
             let sal = 0, menorSal = 99999, media = 0, maiorSal = 0,func1 = [], sal1 = [], j = 0, maiorNome = "", menorNome = "", qtd = lista.funcionarios.length;
             
@@ -285,8 +285,8 @@ function calc () {
                     func1[j] = lista.funcionarios[i].nome
                     sal1[j] = lista.funcionarios[i].salario
                     j++
-                }
-            }
+                };
+            };
             
             //SALARIO MAIS ALTO POR SETOR
             for (i = 0; i < func1.length; i++) {
@@ -294,32 +294,33 @@ function calc () {
                 if (sal > maiorSal) {
                     maiorSal = sal
                     maiorNome = func1[i]    
-                }
-            }
-
+                };
+            };
+            
             //SALARIO MAIS BAIXO POR SETOR
+            sal = 0
             for (let i = 0; i < func1.length; i++) {
                 sal = sal1[i]
                 if (sal < menorSal) {
                     menorSal = sal
                     menorNome = func1[i]
-                }
-            }
-
+                };
+            };
+            sal = 0
             //MEDIAL SALARIAL DO SETOR
             for (let i = 0; i < func1.length; i++) {
                 sal += sal1[i]
                 media = sal/func1.length
-            }     
+            };     
 
             //INSERE RESULTADO NA TELA     
             var el0 = document.createElement("h3");
             el0.id = "h3"
             el0.innerHTML =`${maiorNome} possui o maior salário do setor no valor de R$${maiorSal}.</br>${menorNome} possui o menor salário do setor no valor de R$${menorSal}.</br>A média salarial do setor é de R$${media.toFixed(2)}.`
             document.getElementById("res").appendChild(el0);     
-        }
+        };
         
-    }   
+    };  
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 };
